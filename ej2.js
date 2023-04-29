@@ -1,23 +1,31 @@
 const BITCOIN = 1;
-const BITCOIN_A_ETHEREUM = 13540;
-const BITCOIN_A_DOLAR = 39685.40;
+const BITCOIN_A_ETHEREUM = "13540";
+const BITCOIN_A_DOLAR = "39685.40";
  
-const tipoCambio = document.querySelector ("#usd")
+const cantidadUsd = document.querySelector ("#usd")
 const cantidadBitcoin = document.querySelector ("#eth")
-const pEtherium = document.querySelector("#ethereum")
-const pDolar = document.querySelector ("#dolar")
+const pConvencionUsd = document.querySelector("#dolar")
+const pConvencionBtc = document.querySelector("#btc")
 
 // let cantidadBitcoin = prompt ("ingrese cuantos bitcoin va a convertir");
 let ethereum = "ethereum";
 let dolar = "dolar";
 // let tipoCambio = prompt ("Dolar o Ethereum");
  let btcRecibido = "def"; 
+ let usdRecibido = "def"
 
-
-function cambioEth () {
-    btcRecibido = cantidadBitcoin.value;
-    console.log (btcRecibido)
+function cambioEth() {
+    let btcRecibido = cantidadBitcoin.value;
+    let calculoBtc = btcRecibido * BITCOIN_A_ETHEREUM
+    pConvencionBtc.innerHTML = calculoBtc + " cantidad de eth";
 }
+
+function cambioUsd() {
+    let usdRecibido = cantidadUsd.value
+    let calculoUsd = usdRecibido * BITCOIN_A_DOLAR
+    pConvencionUsd.innerHTML = calculoUsd + " cantidad de usd";
+}
+
 /* 
 if ((tipoCambio == ethereum) && (cantidadBitcoin > "0")) {
     /* document.write ("Usted tiene " + (BITCOIN_A_ETHEREUM * cantidadBitcoin) + " ethereum"); */
